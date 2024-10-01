@@ -1,0 +1,180 @@
+<!--
+   Copyright 2021 Google LLC
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.google.ar.core.examples.kotlin.helloar.VIOActivity">
+
+  <android.opengl.GLSurfaceView
+      android:id="@+id/surfaceview"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="top"/>
+
+
+
+
+
+
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="250dp"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:background="@color/cardview_dark_background">
+
+        <TextView
+            android:id="@+id/VIO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="VIO not calculated"
+            android:textColor="@color/cardview_light_background"/>
+
+        <TextView
+            android:id="@+id/SerialString"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Serial Device Not Connected"
+            android:textColor="@color/cardview_light_background"/>
+
+      </LinearLayout>
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/ConnectButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:onClick="onConnectSerialDeviceClick"
+            android:text="Connect Serial Device"
+             />
+      </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+
+          <RadioGroup
+              android:id = "@+id/speedRadioGroup"
+              android:layout_width="200dp"
+              android:layout_height="wrap_content"
+              android:background="@color/cardview_dark_background"
+              android:layout_marginEnd="2dp"
+              >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text = "#속도"
+                android:textColor="@color/cardview_light_background"
+                android:textSize = "20sp">
+            </TextView>
+
+            <RadioButton
+                android:id="@+id/highSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="고속"
+                android:textColor="@color/cardview_light_background"/>
+
+            <RadioButton
+                android:id="@+id/lowSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="저속"
+                android:textColor="@color/cardview_light_background"/>
+          </RadioGroup>
+
+          <RadioGroup
+              android:id = "@+id/rangingMethodRadioGroup"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginStart="2dp"
+              android:background="@color/cardview_dark_background">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text = "#Ranging 방식"
+                android:textColor="@color/cardview_light_background"
+                android:textSize = "20sp">
+            </TextView>
+            <RadioButton
+                android:id="@+id/singleSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SingleSide"
+                android:textColor="@color/cardview_light_background" />
+
+            <RadioButton
+                android:id="@+id/doubleSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DoubleSide"
+                android:textColor="@color/cardview_light_background" />
+          </RadioGroup>
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/dataSaveButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:textOff="데이터 수집 시작하기"
+            android:textOn = "Stop"/>
+
+      </LinearLayout>
+
+    </FrameLayout>
+  </LinearLayout>
+
+</RelativeLayout>
